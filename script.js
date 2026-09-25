@@ -30,11 +30,39 @@ const weatherIcons = {
   "50n": "mist.png"
 };
 
-function updateCardGradient() {
-  weatherCard.style.setProperty("--gradient-start", "#7bc7b9");
-  weatherCard.style.setProperty("--gradient-mid", "#7faed7");
-  weatherCard.style.setProperty("--gradient-end", "#7a8dd1");
+function updateCardGradient(temperature) {
+  if (temperature < 10) {
+    // Very cold
+    weatherCard.style.setProperty("--gradient-start", "#4facfe");
+    weatherCard.style.setProperty("--gradient-mid", "#6dd5ed");
+    weatherCard.style.setProperty("--gradient-end", "#2193b0");
+
+  } else if (temperature < 20) {
+    // Cool
+    weatherCard.style.setProperty("--gradient-start", "#74ebd5");
+    weatherCard.style.setProperty("--gradient-mid", "#7faed7");
+    weatherCard.style.setProperty("--gradient-end", "#667eea");
+
+  } else if (temperature < 30) {
+    // Normal / pleasant
+    weatherCard.style.setProperty("--gradient-start", "#7bc7b9");
+    weatherCard.style.setProperty("--gradient-mid", "#7faed7");
+    weatherCard.style.setProperty("--gradient-end", "#7a8dd1");
+
+  } else if (temperature < 40) {
+    // Hot
+    weatherCard.style.setProperty("--gradient-start", "#f6d365");
+    weatherCard.style.setProperty("--gradient-mid", "#fda085");
+    weatherCard.style.setProperty("--gradient-end", "#f78ca0");
+
+  } else {
+    // Very hot
+    weatherCard.style.setProperty("--gradient-start", "#ff512f");
+    weatherCard.style.setProperty("--gradient-mid", "#f09819");
+    weatherCard.style.setProperty("--gradient-end", "#ff5858");
+  }
 }
+
 
 async function checkWeather(city) {
   const trimmedCity = city.trim();
@@ -73,5 +101,4 @@ searchBox.addEventListener("keydown", (event) => {
   }
 });
 
-updateCardGradient();
-checkWeather("New York");
+updateCardGradient(temperature);
