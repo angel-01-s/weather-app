@@ -45,9 +45,9 @@ function updateCardGradient(temperature) {
 
   } else if (temperature < 30) {
     // Normal / pleasant
-    weatherCard.style.setProperty("--gradient-start", "#7bc7b9");
-    weatherCard.style.setProperty("--gradient-mid", "#7faed7");
-    weatherCard.style.setProperty("--gradient-end", "#7a8dd1");
+    weatherCard.style.setProperty("--gradient-start", "#56ab2f");
+    weatherCard.style.setProperty("--gradient-mid", "#a8e063");
+    weatherCard.style.setProperty("--gradient-end", "#4fc3f7");
 
   } else if (temperature < 40) {
     // Hot
@@ -101,5 +101,3 @@ searchBox.addEventListener("keydown", (event) => {
     checkWeather(searchBox.value);
   }
 });
-
-
