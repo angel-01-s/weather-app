@@ -39,9 +39,9 @@ function updateCardGradient(temperature) {
 
   } else if (temperature < 20) {
     // Cool
-    weatherCard.style.setProperty("--gradient-start", "#74ebd5");
-    weatherCard.style.setProperty("--gradient-mid", "#7faed7");
-    weatherCard.style.setProperty("--gradient-end", "#667eea");
+    weatherCard.style.setProperty("--gradient-start","#a8edea");
+    weatherCard.style.setProperty("--gradient-mid", "#fed6e3");
+    weatherCard.style.setProperty("--gradient-end", "#ff9a9e");
 
   } else if (temperature < 30) {
     // Normal / pleasant
