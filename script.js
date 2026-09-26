@@ -103,4 +103,4 @@ searchBox.addEventListener("keydown", (event) => {
   }
 });
 
-updateCardGradient(22);
+checkWeather("New York");
