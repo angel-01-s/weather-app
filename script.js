@@ -89,6 +89,7 @@ async function checkWeather(city) {
 
   const iconCode = data.weather[0].icon;
   weatherIcon.src = `assets/${weatherIcons[iconCode] || "clouds.png"}`;
+  searchBox.value = ""; // Clear search box after successful search
 }
 
 searchBtn.addEventListener("click", () => {
