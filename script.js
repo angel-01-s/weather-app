@@ -30,39 +30,34 @@ const weatherIcons = {
   "50n": "mist.png"
 };
 
+
 function updateCardGradient(temperature) {
   if (temperature < 10) {
-    //  Freezing —
-    weatherCard.style.setProperty("--gradient-start", "#243B55");
-    weatherCard.style.setProperty("--gradient-mid", "#3A6073");
-    weatherCard.style.setProperty("--gradient-end", "#16222A");
+    weatherCard.style.setProperty("--gradient-start", "#DCEAF7");
+    weatherCard.style.setProperty("--gradient-mid", "#B8D8EA");
+    weatherCard.style.setProperty("--gradient-end", "#7FB3D5");
 
   } else if (temperature < 20) {
-    // Cool 
-    weatherCard.style.setProperty("--gradient-start", "#4B6CB7");
-    weatherCard.style.setProperty("--gradient-mid", "#6B8DD6");
-    weatherCard.style.setProperty("--gradient-end", "#182848");
+    weatherCard.style.setProperty("--gradient-start", "#DDEBFF");
+    weatherCard.style.setProperty("--gradient-mid", "#B8CFF2");
+    weatherCard.style.setProperty("--gradient-end", "#8FAADC");
 
   } else if (temperature < 30) {
-    //  Comfortable
-    weatherCard.style.setProperty("--gradient-start", "#2C7A7B");
-    weatherCard.style.setProperty("--gradient-mid", "#4FA3A5");
-    weatherCard.style.setProperty("--gradient-end", "#1E4D4F");
+    weatherCard.style.setProperty("--gradient-start", "#D8F3DC");
+    weatherCard.style.setProperty("--gradient-mid", "#B7E4C7");
+    weatherCard.style.setProperty("--gradient-end", "#74C69D");
 
   } else if (temperature < 40) {
-    // Hot 
-    weatherCard.style.setProperty("--gradient-start", "#C77B30");
-    weatherCard.style.setProperty("--gradient-mid", "#E09F3E");
-    weatherCard.style.setProperty("--gradient-end", "#8F3B2E");
+    weatherCard.style.setProperty("--gradient-start", "#FFE8C2");
+    weatherCard.style.setProperty("--gradient-mid", "#FFD08A");
+    weatherCard.style.setProperty("--gradient-end", "#F4A261");
 
   } else {
-    // Very hot 
-    weatherCard.style.setProperty("--gradient-start", "#8B2E2E");
-    weatherCard.style.setProperty("--gradient-mid", "#C94C4C");
-    weatherCard.style.setProperty("--gradient-end", "#5C1F1F");
+    weatherCard.style.setProperty("--gradient-start", "#FFD6C9");
+    weatherCard.style.setProperty("--gradient-mid", "#FF9F80");
+    weatherCard.style.setProperty("--gradient-end", "#E76F51");
   }
 }
-
 
 
 
