@@ -236,17 +236,16 @@ body {
   }
 
 
- .weather-card {
+.weather-card {
   background: linear-gradient(
     135deg,
-    var(--gradient-start) 0%,
-    var(--gradient-mid) 50%,
-    var(--gradient-end) 100%
+    var(--gradient-start),
+    var(--gradient-mid),
+    var(--gradient-end)
   );
 
-  transition:
-    background 0.8s ease,
-    box-shadow 0.8s ease;
+  transition: background 0.7s ease;
 }
+
 
 
