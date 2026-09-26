@@ -30,42 +30,40 @@ const weatherIcons = {
   "50n": "mist.png"
 };
 
-
 function updateCardGradient(temperature) {
-  if (temperature < 10) {
-    //  Very cold —
-    weatherCard.style.setProperty("--gradient-start", "#E8F6FF");
-    weatherCard.style.setProperty("--gradient-mid", "#CDEBFA");
-    weatherCard.style.setProperty("--gradient-end", "#A9DDF5");
+  let start, mid, end;
 
+  if (temperature < 0) {
+    start = "#0f172a";
+    mid = "#1d4ed8";
+    end = "#67e8f9";
+  } else if (temperature < 10) {
+    start = "#7dd3fc";
+    mid = "#93c5fd";
+    end = "#dbeafe";
   } else if (temperature < 20) {
-    // Cool
-    weatherCard.style.setProperty("--gradient-start", "#EAF3FF");
-    weatherCard.style.setProperty("--gradient-mid", "#D4E6FA");
-    weatherCard.style.setProperty("--gradient-end", "#B7D4F0");
-
+    start = "#a7f3d0";
+    mid = "#86efac";
+    end = "#4ade80";
   } else if (temperature < 30) {
-    //  Pleasant 
-    weatherCard.style.setProperty("--gradient-start", "#ECF9F0");
-    weatherCard.style.setProperty("--gradient-mid", "#D2F0DA");
-    weatherCard.style.setProperty("--gradient-end", "#B4E3C1");
-
+    start = "#fef3c7";
+    mid = "#facc15";
+    end = "#f97316";
   } else if (temperature < 40) {
-    //  Hot 
-    weatherCard.style.setProperty("--gradient-start", "#FFF8E7");
-    weatherCard.style.setProperty("--gradient-mid", "#FFE9B5");
-    weatherCard.style.setProperty("--gradient-end", "#FFD18A");
-
+    start = "#fdba74";
+    mid = "#fb923c";
+    end = "#ef4444";
   } else {
-    // Very hot
-    weatherCard.style.setProperty("--gradient-start", "#FFF0EC");
-    weatherCard.style.setProperty("--gradient-mid", "#FFD6CC");
-    weatherCard.style.setProperty("--gradient-end", "#FFB8A8");
+    start = "#f97316";
+    mid = "#ef4444";
+    end = "#7f1d1d";
   }
+
+  weatherCard.style.setProperty("--gradient-start", start);
+  weatherCard.style.setProperty("--gradient-mid", mid);
+  weatherCard.style.setProperty("--gradient-end", end);
+  weatherCard.style.background = `linear-gradient(135deg, ${start} 0%, ${mid} 52%, ${end} 100%)`;
 }
-
-
-
 
 async function checkWeather(city) {
   const trimmedCity = city.trim();
@@ -92,7 +90,7 @@ async function checkWeather(city) {
 
   const iconCode = data.weather[0].icon;
   weatherIcon.src = `assets/${weatherIcons[iconCode] || "clouds.png"}`;
-  searchBox.value = ""; // Clear search box after successful search
+  searchBox.value = "";
 }
 
 searchBtn.addEventListener("click", () => {
@@ -104,3 +102,5 @@ searchBox.addEventListener("keydown", (event) => {
     checkWeather(searchBox.value);
   }
 });
+
+updateCardGradient(20);
