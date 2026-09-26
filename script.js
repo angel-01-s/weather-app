@@ -31,37 +31,25 @@ const weatherIcons = {
 };
 
 function updateCardGradient(temperature) {
+  let colors;
+
   if (temperature < 10) {
-    // Very cold
-    weatherCard.style.setProperty("--gradient-start", "#4facfe");
-    weatherCard.style.setProperty("--gradient-mid", "#6dd5ed");
-    weatherCard.style.setProperty("--gradient-end", "#2193b0");
-
+    colors = ["#0F2027", "#203A43", "#2C5364"];
   } else if (temperature < 20) {
-    // Cool
-    weatherCard.style.setProperty("--gradient-start","#667eea");
-    weatherCard.style.setProperty("--gradient-mid", "#6a82fb");
-    weatherCard.style.setProperty("--gradient-end", "3f5efb");
-
+    colors = ["#355C7D", "#6C8EBF", "#6DD5FA"];
   } else if (temperature < 30) {
-    // Normal / pleasant
-    weatherCard.style.setProperty("--gradient-start", "#56ab2f");
-    weatherCard.style.setProperty("--gradient-mid", "#a8e063");
-    weatherCard.style.setProperty("--gradient-end", "#4fc3f7");
-
+    colors = ["#11998E", "#38EF7D", "#56CCF2"];
   } else if (temperature < 40) {
-    // Hot
-    weatherCard.style.setProperty("--gradient-start", "#f6d365");
-    weatherCard.style.setProperty("--gradient-mid", "#fda085");
-    weatherCard.style.setProperty("--gradient-end", "#f78ca0");
-
+    colors = ["#F7971E", "#FFD200", "#FF6B6B"];
   } else {
-    // Very hot
-    weatherCard.style.setProperty("--gradient-start", "#ff512f");
-    weatherCard.style.setProperty("--gradient-mid", "#f09819");
-    weatherCard.style.setProperty("--gradient-end", "#ff5858");
+    colors = ["#FF416C", "#FF4B2B", "#FF8C42"];
   }
+
+  weatherCard.style.setProperty("--gradient-start", colors[0]);
+  weatherCard.style.setProperty("--gradient-mid", colors[1]);
+  weatherCard.style.setProperty("--gradient-end", colors[2]);
 }
+
 
 
 async function checkWeather(city) {
