@@ -85,7 +85,7 @@ async function checkWeather(city) {
   temperatureElement.innerHTML = `${temperature}<span>°c</span>`;
   statValues[0].textContent = `${data.main.humidity}%`;
   statValues[1].textContent = `${Math.round(data.wind.speed)} km/h`;
-  updateCardGradient();
+  updateCardGradient(temperature);
 
   const iconCode = data.weather[0].icon;
   weatherIcon.src = `assets/${weatherIcons[iconCode] || "clouds.png"}`;
@@ -101,4 +101,4 @@ searchBox.addEventListener("keydown", (event) => {
   }
 });
 
-updateCardGradient(temperature);
+
