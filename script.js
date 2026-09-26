@@ -36,26 +36,26 @@ function updateCardGradient(temperature) {
   if (temperature < 0) {
     start = "#0f172a";
     mid = "#1d4ed8";
-    end = "#67e8f9";
+    end = "#7dd3fc";
   } else if (temperature < 10) {
-    start = "#7dd3fc";
-    mid = "#93c5fd";
+    start = "#38bdf8";
+    mid = "#7dd3fc";
     end = "#dbeafe";
   } else if (temperature < 20) {
-    start = "#a7f3d0";
-    mid = "#86efac";
-    end = "#4ade80";
+    start = "#c6f6ff";
+    mid = "#7dd3fc";
+    end = "#34d399";
   } else if (temperature < 30) {
-    start = "#fef3c7";
+    start = "#a7f3d0";
     mid = "#facc15";
-    end = "#f97316";
+    end = "#f59e0b";
   } else if (temperature < 40) {
-    start = "#fdba74";
+    start = "#fcd34d";
     mid = "#fb923c";
     end = "#ef4444";
   } else {
     start = "#f97316";
-    mid = "#ef4444";
+    mid = "#dc2626";
     end = "#7f1d1d";
   }
 
@@ -103,4 +103,4 @@ searchBox.addEventListener("keydown", (event) => {
   }
 });
 
-updateCardGradient(20);
+updateCardGradient(22);
