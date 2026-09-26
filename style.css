@@ -12,7 +12,9 @@ body {
 
   font-family: Arial, Helvetica, sans-serif;
 
-  background: #202020;
+  background:
+    radial-gradient(circle at top, rgba(125, 211, 252, 0.28), transparent 30%),
+    linear-gradient(160deg, #0f172a 0%, #111827 38%, #030712 100%);
 }
 
 /* Main container */
@@ -29,9 +31,9 @@ body {
 
 /* Weather Card */
 .weather-card {
-  --gradient-start: #7bc7b9;
-  --gradient-mid: #7faed7;
-  --gradient-end: #7a8dd1;
+  --gradient-start: #7dd3fc;
+  --gradient-mid: #60a5fa;
+  --gradient-end: #7c3aed;
 
   width: 360px;
   height: 480px;
@@ -39,19 +41,25 @@ body {
   padding: 28px 24px 22px;
 
   border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 
   background: linear-gradient(
     135deg,
     var(--gradient-start) 0%,
-    var(--gradient-mid) 50%,
+    var(--gradient-mid) 48%,
     var(--gradient-end) 100%
   );
-  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
 
   display: flex;
   flex-direction: column;
   align-items: center;
- transition: background 0.8s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 /* Search */
@@ -234,18 +242,4 @@ body {
   .temperature {
     font-size: 54px;
   }
-
-
-.weather-card {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-start),
-    var(--gradient-mid),
-    var(--gradient-end)
-  );
-
-  transition: background 0.7s ease;
 }
-
-
-
