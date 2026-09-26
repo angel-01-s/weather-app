@@ -235,6 +235,18 @@ body {
     font-size: 54px;
   }
 
+
+  .weather-card {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-mid),
+    var(--gradient-end)
+  );
+
+  transition: background 0.8s ease;
+}
+
   .location {
     font-size: 26px;
   }
